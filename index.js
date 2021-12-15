@@ -169,11 +169,11 @@ function tagRow(tagName) {
 }
 
 function userLink(d) {
-    return '<a target="_blank" href="https://hdyc.neis-one.org/?' + d + '">' + d + '</a>';
+    return '<a target="_blank" href="https://openstreetmap.org/user/' + d + '">' + d + '</a> <a target="_blank" href="https://hdyc.neis-one.org/?' + d + '">(hdyc)</a>';
 }
 
 function changesetLink(d) {
-    return '<a target="_blank" href="https://osmcha.org/changesets/' + d + '">' + d + '</a>';
+    return '<a target="_blank" href="https://openstreetmap.org/changeset/' + d + '">' + d + '</a> <a target="_blank" href="https://overpass-api.de/achavi/?changeset=' + d + '">(achavi)</a>';
 }
 
 function showTable(object) {
