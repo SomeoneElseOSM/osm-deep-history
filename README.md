@@ -1,35 +1,26 @@
 # OSM Deep History
 
-A better way to view the history of objects in [OpenStreetMap](http://www.openstreetmap.org/).
+This is 99.9% based on https://github.com/osmlab/osm-deep-history with a few minor tweaks.
 
-Example history views:
-* [Node](https://aleung.github.io/osm-visual-history/#/node/4857559003)
-* [Way](https://aleung.github.io/osm-visual-history/#/way/333067739) (The map needs a few seconds to load)
+Changes:
+* Map is currently not displayed (to allow more object versions to fit on the screen)
+* The bottom scroll bar is moved up a bit more to work better on smaller screens.
+* The default changeset link is to openstreetmap.org/changeset.
+* An additional changeset link to https://overpass-api.de/achavi/ is also available.
+* The default user link is to openstreetmap.org/user.
+* An additional user link to https://hdyc.neis-one.org/ is also available.
+* Uid is also displayed, and comments on the user's changesets, and their comments, are also shown.
 
-It's an enhancement base on [osmlab/osm-deep-history](https://github.com/osmlab/osm-deep-history) with below update:
+Example deployment:
+* [Node](https://map.atownsend.org.uk/osm-deep-history/#/node/4857559003)
+* [Way](https://map.atownsend.org.uk/osm-deep-history/#/way/333067739)
 
-Common:
-* Improve map UI and fix issues
-* When mouse hover on table cell, highlight corresponding version of object on map and pan to center
-* In table, show version which is invisible in red (`removed`)
-* Base map layer: OpenStreetMap and Mapbox Satellite Streets
-* Export full data of specific version in Level0L format
-
-Node:
-* Show lat, lon in table
-* Show way(s) which the node belongs to
-
-Way:
-* Show history versions of way on map
-
-## Development
-
-The source code has been rewritten mostly in ES6, using Promise and functional style.
-
-To rebuild and run locally:
+To rebuild and test locally:
 
 ```
 npm install
 npm run build
 npm start
 ```
+
+Once rebuilt, just deploy behind a regular website - "bundle.js" contains all the code; no need to run "npm".

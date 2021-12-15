@@ -73,6 +73,7 @@ const osmHistory = (function osmDeepHistory() {
         const obj = {
             type: e.tagName,
             user: e.getAttribute('user'),
+            uid: e.getAttribute('uid'),
             timestamp: moment(e.getAttribute('timestamp')),
             changeset: +e.getAttribute('changeset'),
             version: +e.getAttribute('version'),

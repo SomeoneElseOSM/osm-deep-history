@@ -172,6 +172,10 @@ function userLink(d) {
     return '<a target="_blank" href="https://openstreetmap.org/user/' + d + '">' + d + '</a> <a target="_blank" href="https://hdyc.neis-one.org/?' + d + '">(hdyc)</a>';
 }
 
+function uidLink(d) {
+    return d + ' <a target="_blank" href="https://resultmaps.neis-one.org/osm-discussion-comments?uid=' + d + '">comments</a> <a target="_blank" href="https://resultmaps.neis-one.org/osm-discussion-comments?uid=' + d + '&commented">commented</a>';
+}
+
 function changesetLink(d) {
     return '<a target="_blank" href="https://openstreetmap.org/changeset/' + d + '">' + d + '</a> <a target="_blank" href="https://overpass-api.de/achavi/?changeset=' + d + '">(achavi)</a>';
 }
@@ -187,6 +191,7 @@ function showTable(object) {
     tbody.append('tr').call(row('timestamp', 'Time', d => d.format('LLL')));
     tbody.append('tr').call(row('changeset', 'Changeset', changesetLink));
     tbody.append('tr').call(row('user', 'User', userLink));
+    tbody.append('tr').call(row('uid', 'Uid', uidLink));
 
     if (object[0].type === 'node') {
         tbody.append('tr').call(row('lat', 'Lat'));
