@@ -211,7 +211,7 @@ function showTable(object) {
 function mapStatusChanged(status) {
     d3.select('#go').classed('is-loading', false);
     if (status.showMap) {
-        d3.select('#map').style('display', 'block');
+        d3.select('#map').style('display', 'none');
         map.fitBounds(overlays.getBounds(), { paddingTopLeft: L.point(0, 50) });
         map.invalidateSize();
     } else {
